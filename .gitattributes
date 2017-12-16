@@ -1,2 +1,2 @@
-* DebugMan-vendored
-*.swift DebugMan-vendored=false
+*.h linguist-language=Swift
+*.m linguist-language=Swift
