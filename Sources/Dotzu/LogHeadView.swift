@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LogHeadViewDelegate: class {
-    func didTapButton()
+    func didTapLogHeadView()
 }
 
 class LogHeadView: UIView {
@@ -135,7 +135,7 @@ class LogHeadView: UIView {
     
     //MARK: - target action
     @objc func tap() {
-        delegate?.didTapButton()
+        delegate?.didTapLogHeadView()
         
         LogsSettings.shared.isControllerPresent = true //liman mark
     }

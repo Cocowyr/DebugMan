@@ -10,28 +10,28 @@ import UIKit
 
 class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
-    var button = LogHeadView(frame: CGRect(origin: LogHeadView.originalPosition, size: LogHeadView.size))
+    var logHeadView = LogHeadView(frame: CGRect(origin: LogHeadView.originalPosition, size: LogHeadView.size))
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        self.view.addSubview(self.button)
+        self.view.addSubview(self.logHeadView)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.button.updateOrientation(newSize: size)
+        self.logHeadView.updateOrientation(newSize: size)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.button.delegate = self
+        self.logHeadView.delegate = self
         self.view.backgroundColor = UIColor.clear
         let selector = #selector(ManagerViewController.panDidFire(panner:))
         let panGesture = UIPanGestureRecognizer(target: self, action: selector)
-        button.addGestureRecognizer(panGesture)
+        logHeadView.addGestureRecognizer(panGesture)
     }
 
-    func didTapButton() {
+    func didTapLogHeadView() {
         Dotzu.sharedManager.displayedList = true
         let storyboard = UIStoryboard(name: "Manager", bundle: Bundle(for: ManagerViewController.self))
         guard let controller = storyboard.instantiateInitialViewController() else {
@@ -48,16 +48,16 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
         if panner.state == .began {
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
-                self.button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                self.logHeadView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }, completion: nil)
         }
 
         let offset = panner.translation(in: view)
         panner.setTranslation(CGPoint.zero, in: view)
-        var center = button.center
+        var center = logHeadView.center
         center.x += offset.x
         center.y += offset.y
-        button.center = center
+        logHeadView.center = center
 
         if panner.state == .ended || panner.state == .cancelled {
 
@@ -69,9 +69,9 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
             if location.x > UIScreen.main.bounds.size.width / 2 {
                 finalX = Double(UIScreen.main.bounds.size.width) - 30.0
-                self.button.changeSideDisplay(left: false)
+                self.logHeadView.changeSideDisplay(left: false)
             } else {
-                self.button.changeSideDisplay(left: true)
+                self.logHeadView.changeSideDisplay(left: true)
             }
 
             let horizentalVelocity = abs(velocity.x)
@@ -97,8 +97,8 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
                            initialSpringVelocity: 6,
                            options: UIViewAnimationOptions.allowUserInteraction,
                            animations: {
-                            self.button.center = CGPoint(x: finalX, y: finalY)
-                            self.button.transform = CGAffineTransform.identity
+                            self.logHeadView.center = CGPoint(x: finalX, y: finalY)
+                            self.logHeadView.transform = CGAffineTransform.identity
                 }, completion: nil)
         }
     }
@@ -107,6 +107,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
         if Dotzu.sharedManager.displayedList {
             return true
         }
-        return self.button.frame.contains(point)
+        return self.logHeadView.frame.contains(point)
     }
 }
