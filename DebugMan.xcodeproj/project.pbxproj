@@ -58,7 +58,6 @@
 		EA44B98C1FE140D600DF7FF6 /* LoggerCrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B92F1FE140D600DF7FF6 /* LoggerCrash.swift */; };
 		EA44B98D1FE140D600DF7FF6 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9301FE140D600DF7FF6 /* StoreManager.swift */; };
 		EA44B98E1FE140D600DF7FF6 /* LoggerFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9311FE140D600DF7FF6 /* LoggerFormat.swift */; };
-		EA44B98F1FE140D600DF7FF6 /* LogHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9321FE140D600DF7FF6 /* LogHeadView.swift */; };
 		EA44B9901FE140D600DF7FF6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9331FE140D600DF7FF6 /* Color.swift */; };
 		EA44B9911FE140D600DF7FF6 /* KeyboardMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9351FE140D600DF7FF6 /* KeyboardMan.swift */; };
 		EA44B9921FE140D600DF7FF6 /* NetworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9371FE140D600DF7FF6 /* NetworkCell.swift */; };
@@ -85,6 +84,9 @@
 		EA44B9B41FE140D600DF7FF6 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96A1FE140D600DF7FF6 /* AFSecurityPolicy.m */; };
 		EA44B9B51FE140D600DF7FF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */; };
 		EA5066081FE63A4C00F6A386 /* debugman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5066071FE63A4C00F6A386 /* debugman_logo.png */; };
+		EA50663B1FE64DE700F6A386 /* ZYSuspensionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5066351FE64DE700F6A386 /* ZYSuspensionManager.m */; };
+		EA50663C1FE64DE700F6A386 /* ZYSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5066381FE64DE700F6A386 /* ZYSuspensionView.m */; };
+		EA50663D1FE64DE700F6A386 /* NSObject+ZYSuspensionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA50663A1FE64DE700F6A386 /* NSObject+ZYSuspensionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,7 +154,6 @@
 		EA44B92F1FE140D600DF7FF6 /* LoggerCrash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerCrash.swift; sourceTree = "<group>"; };
 		EA44B9301FE140D600DF7FF6 /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		EA44B9311FE140D600DF7FF6 /* LoggerFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerFormat.swift; sourceTree = "<group>"; };
-		EA44B9321FE140D600DF7FF6 /* LogHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHeadView.swift; sourceTree = "<group>"; };
 		EA44B9331FE140D600DF7FF6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EA44B9351FE140D600DF7FF6 /* KeyboardMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardMan.swift; sourceTree = "<group>"; };
 		EA44B9361FE140D600DF7FF6 /* DebugMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugMan.h; sourceTree = "<group>"; };
@@ -194,6 +195,12 @@
 		EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		EA44B96C1FE140D600DF7FF6 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		EA5066071FE63A4C00F6A386 /* debugman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_logo.png; sourceTree = "<group>"; };
+		EA5066351FE64DE700F6A386 /* ZYSuspensionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSuspensionManager.m; sourceTree = "<group>"; };
+		EA5066361FE64DE700F6A386 /* ZYSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSuspensionView.h; sourceTree = "<group>"; };
+		EA5066371FE64DE700F6A386 /* NSObject+ZYSuspensionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZYSuspensionView.h"; sourceTree = "<group>"; };
+		EA5066381FE64DE700F6A386 /* ZYSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSuspensionView.m; sourceTree = "<group>"; };
+		EA5066391FE64DE700F6A386 /* ZYSuspensionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSuspensionManager.h; sourceTree = "<group>"; };
+		EA50663A1FE64DE700F6A386 /* NSObject+ZYSuspensionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZYSuspensionView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +276,7 @@
 		EA44B9031FE140D600DF7FF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EA5066341FE64DE700F6A386 /* ZYSuspensionView */,
 				EA44B9341FE140D600DF7FF6 /* Core */,
 				EA44B9041FE140D600DF7FF6 /* Jxb */,
 				EA44B9191FE140D600DF7FF6 /* Dotzu */,
@@ -333,7 +341,6 @@
 				EA44B92F1FE140D600DF7FF6 /* LoggerCrash.swift */,
 				EA44B9301FE140D600DF7FF6 /* StoreManager.swift */,
 				EA44B9311FE140D600DF7FF6 /* LoggerFormat.swift */,
-				EA44B9321FE140D600DF7FF6 /* LogHeadView.swift */,
 				EA44B9331FE140D600DF7FF6 /* Color.swift */,
 			);
 			path = Dotzu;
@@ -397,6 +404,19 @@
 				EA44B96C1FE140D600DF7FF6 /* AFHTTPSessionManager.h */,
 			);
 			path = AFN;
+			sourceTree = "<group>";
+		};
+		EA5066341FE64DE700F6A386 /* ZYSuspensionView */ = {
+			isa = PBXGroup;
+			children = (
+				EA5066361FE64DE700F6A386 /* ZYSuspensionView.h */,
+				EA5066381FE64DE700F6A386 /* ZYSuspensionView.m */,
+				EA5066391FE64DE700F6A386 /* ZYSuspensionManager.h */,
+				EA5066351FE64DE700F6A386 /* ZYSuspensionManager.m */,
+				EA5066371FE64DE700F6A386 /* NSObject+ZYSuspensionView.h */,
+				EA50663A1FE64DE700F6A386 /* NSObject+ZYSuspensionView.m */,
+			);
+			path = ZYSuspensionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +526,7 @@
 				EA44B9AF1FE140D600DF7FF6 /* AFURLSessionManager.m in Sources */,
 				EA44B9B11FE140D600DF7FF6 /* AFURLRequestSerialization.m in Sources */,
 				EA44B9741FE140D600DF7FF6 /* JxbDebugTool.m in Sources */,
+				EA50663B1FE64DE700F6A386 /* ZYSuspensionManager.m in Sources */,
 				EA44B9731FE140D600DF7FF6 /* NSURLSessionTask+Data.m in Sources */,
 				EA44B9B31FE140D600DF7FF6 /* AFNetworkReachabilityManager.m in Sources */,
 				EA44B9931FE140D600DF7FF6 /* NetworkViewController.swift in Sources */,
@@ -514,6 +535,7 @@
 				EA44B97A1FE140D600DF7FF6 /* Log.swift in Sources */,
 				EA44B9AC1FE140D600DF7FF6 /* AFURLResponseSerialization.m in Sources */,
 				EA44B9941FE140D600DF7FF6 /* EditViewController.swift in Sources */,
+				EA50663D1FE64DE700F6A386 /* NSObject+ZYSuspensionView.m in Sources */,
 				EA44B9831FE140D600DF7FF6 /* DetailCrashTableViewController.swift in Sources */,
 				EA44B9B21FE140D600DF7FF6 /* AFHTTPRequestOperation.m in Sources */,
 				EA44B9B41FE140D600DF7FF6 /* AFSecurityPolicy.m in Sources */,
@@ -534,6 +556,7 @@
 				EA44B99A1FE140D600DF7FF6 /* DebugMan+Extensions.swift in Sources */,
 				EA44B9971FE140D600DF7FF6 /* NetworkDetailCell.swift in Sources */,
 				EA44B9721FE140D600DF7FF6 /* NSURLRequest+Identify.m in Sources */,
+				EA50663C1FE64DE700F6A386 /* ZYSuspensionView.m in Sources */,
 				EA44B9771FE140D600DF7FF6 /* LogTabBarViewController.swift in Sources */,
 				EA44B9AE1FE140D600DF7FF6 /* AFURLConnectionOperation.m in Sources */,
 				EA44B97C1FE140D600DF7FF6 /* Logger.swift in Sources */,
@@ -542,7 +565,6 @@
 				EA44B97B1FE140D600DF7FF6 /* ApplicationInformation.swift in Sources */,
 				EA44B9871FE140D600DF7FF6 /* CrashListTableViewCell.swift in Sources */,
 				EA44B9761FE140D600DF7FF6 /* JxbHttpDatasource.m in Sources */,
-				EA44B98F1FE140D600DF7FF6 /* LogHeadView.swift in Sources */,
 				EA44B9961FE140D600DF7FF6 /* NetworkDetailViewController.swift in Sources */,
 				EA44B9951FE140D600DF7FF6 /* DebugMan.swift in Sources */,
 				EA44B9751FE140D600DF7FF6 /* JxbMemoryHelper.m in Sources */,

@@ -36,6 +36,7 @@ FOUNDATION_EXPORT const unsigned char DebugManVersionString[];
 #import "NetworkManager.h"
 #import "JxbDebugTool.h"
 #import "JxbHttpDatasource.h"
+#import "ZYSuspensionView.h"
 #import "NSString+Utils.h"
 #import "UIColor+Utils.h"
 #import "UIWindow+DHCShakeRecognizer.h"
