@@ -39,7 +39,6 @@ FOUNDATION_EXPORT const unsigned char DebugManVersionString[];
 #import "NSString+Utils.h"
 #import "UIColor+Utils.h"
 #import "UIWindow+DHCShakeRecognizer.h"
-#import "UIView+Shake.h"
 
 
 

@@ -783,15 +783,15 @@
                         <sections>
                             <tableViewSection id="OgA-8W-RBV">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="410" id="zrF-HA-EEh">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="400" id="zrF-HA-EEh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zrF-HA-EEh" id="9Yu-I0-Oa7">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbY-oT-O44">
-                                                    <rect key="frame" x="15" y="83" width="290" height="316"/>
+                                                    <rect key="frame" x="15" y="83" width="290" height="306"/>
                                                     <gestureRecognizers/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="If you like DebugMan, you can ">
@@ -888,7 +888,6 @@ Portions of DebugMan utilize the following copyrighted material, the use of whic
 ● remirobert/Dotzu
 ● nixzhu/KeyboardMan
 ● JxbSir/JxbDebugTool
-● andreamazz/UIView-Shake
 ● AFNetworking/AFNetworking
 ● Daniel1of1/DHCShakeNotifier</string>
                                                             <attributes>

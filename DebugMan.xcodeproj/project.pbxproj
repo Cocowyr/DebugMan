@@ -85,7 +85,6 @@
 		EA44B9B41FE140D600DF7FF6 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96A1FE140D600DF7FF6 /* AFSecurityPolicy.m */; };
 		EA44B9B51FE140D600DF7FF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */; };
 		EA5066081FE63A4C00F6A386 /* debugman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5066071FE63A4C00F6A386 /* debugman_logo.png */; };
-		EADB204E1FE6707D00C63A0A /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = EADB204C1FE6707D00C63A0A /* UIView+Shake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,8 +194,6 @@
 		EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		EA44B96C1FE140D600DF7FF6 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		EA5066071FE63A4C00F6A386 /* debugman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_logo.png; sourceTree = "<group>"; };
-		EADB204C1FE6707D00C63A0A /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
-		EADB204D1FE6707D00C63A0A /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,8 +361,6 @@
 		EA44B9411FE140D600DF7FF6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				EADB204D1FE6707D00C63A0A /* UIView+Shake.h */,
-				EADB204C1FE6707D00C63A0A /* UIView+Shake.m */,
 				EA44B9421FE140D600DF7FF6 /* UIWindow+DHCShakeRecognizer.h */,
 				EA44B9431FE140D600DF7FF6 /* NSString+Utils.h */,
 				EA44B9441FE140D600DF7FF6 /* UIColor+Utils.m */,
@@ -547,7 +542,6 @@
 				EA44B97B1FE140D600DF7FF6 /* ApplicationInformation.swift in Sources */,
 				EA44B9871FE140D600DF7FF6 /* CrashListTableViewCell.swift in Sources */,
 				EA44B9761FE140D600DF7FF6 /* JxbHttpDatasource.m in Sources */,
-				EADB204E1FE6707D00C63A0A /* UIView+Shake.m in Sources */,
 				EA44B98F1FE140D600DF7FF6 /* LogHeadView.swift in Sources */,
 				EA44B9961FE140D600DF7FF6 /* NetworkDetailViewController.swift in Sources */,
 				EA44B9951FE140D600DF7FF6 /* DebugMan.swift in Sources */,
