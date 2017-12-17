@@ -111,16 +111,10 @@ class LogHeadView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func changeSideDisplay(left: Bool) {
-        if left {
-            UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5,
-                           initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
-            }, completion: nil)
-        } else {
-            UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5,
-                           initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
-            }, completion: nil)
-        }
+    func changeSideDisplay() {
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
+        }, completion: nil)
     }
 
     func updateOrientation(newSize: CGSize) {

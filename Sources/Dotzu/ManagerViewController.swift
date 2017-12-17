@@ -69,10 +69,9 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
             if location.x > UIScreen.main.bounds.size.width / 2 {
                 finalX = Double(UIScreen.main.bounds.size.width) - 30.0
-                self.logHeadView.changeSideDisplay(left: false)
-            } else {
-                self.logHeadView.changeSideDisplay(left: true)
             }
+            
+            self.logHeadView.changeSideDisplay()
 
             let horizentalVelocity = abs(velocity.x)
             let positionX = abs(finalX - Double(location.x))
