@@ -9,7 +9,6 @@
 import UIKit
 
 public class Dotzu: NSObject {
-    
     public static let sharedManager = Dotzu()
     var window: ManagerWindow
     fileprivate let controller = ManagerViewController()
@@ -24,7 +23,6 @@ public class Dotzu: NSObject {
         self.window.rootViewController = self.controller
         self.window.isHidden = false
         self.window.delegate = self
-        self.controller.showLogHead()
         Logger.shared.enable = true
         LoggerCrash.shared.enable = true
     }
@@ -33,7 +31,6 @@ public class Dotzu: NSObject {
         self.window.rootViewController = nil
         self.window.removeFromSuperview()
         self.window.delegate = nil//liman mark
-        self.controller.hideLogHead()
         Logger.shared.enable = false
         LoggerCrash.shared.enable = false
     }

@@ -260,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.30192413930000001" green="0.30198186640000002" blue="0.30192047360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © DebugMan by liman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xG5-44-OOz">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright © DebugMan by liman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xG5-44-OOz">
                             <rect key="frame" x="0.0" y="769.5" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -697,7 +697,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bR-ma-wZQ">
-                                                    <rect key="frame" x="223" y="14" width="111" height="16"/>
+                                                    <rect key="frame" x="168" y="14" width="111" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="111" id="eV0-Gy-lkc"/>
                                                     </constraints>
@@ -885,12 +885,12 @@ Cgo
 
 Portions of DebugMan utilize the following copyrighted material, the use of which is hereby acknowledged.
 
-● Dotzu
-● JxbDebugTool
-● AFNetworking
-● DHCShakeNotifier
-● ZYSuspensionView
-● KeyboardMan</string>
+● remirobert/Dotzu
+● nixzhu/KeyboardMan
+● JxbSir/JxbDebugTool
+● andreamazz/UIView-Shake
+● AFNetworking/AFNetworking
+● Daniel1of1/DHCShakeNotifier</string>
                                                             <attributes>
                                                                 <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="NSColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

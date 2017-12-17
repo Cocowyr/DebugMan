@@ -8,88 +8,105 @@
 
 import UIKit
 
-class ManagerViewController: UIViewController, ZYSuspensionViewDelegate {
+class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
-    private var logHeadView: ZYSuspensionView?
-    private var timer: Timer?
+    var logHeadView = LogHeadView(frame: CGRect(origin: LogHeadView.originalPosition, size: LogHeadView.size))
 
-    //liman mark
-    public func showLogHead() {
-        logHeadView?.show()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        self.view.addSubview(self.logHeadView)
     }
 
-    public func hideLogHead() {
-        logHeadView?.removeFromScreen()
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.logHeadView.updateOrientation(newSize: size)
     }
-    
-    //MARK: - tool
-    fileprivate func initLabelEvent(content: String, logHeadView: ZYSuspensionView?) {
-        guard let logHeadView = logHeadView else {return}
-        let view = UILabel()
-        view.frame = CGRect(x: logHeadView.frame.size.width/2 - 25/2,
-                            y: logHeadView.frame.size.height/2, width: 25, height: 25)
-        view.text = content
-        logHeadView.addSubview(view)
-        UIView.animate(withDuration: 0.8, animations: {
-            view.frame.origin.y = -100
-            view.alpha = 0
-        }, completion: { _ in
-            view.removeFromSuperview()
-        })
-    }
-    
-    //MARK: - init
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        logHeadView = ZYSuspensionView.defaultSuspensionView(with: self)
-        logHeadView?.leanType = .eachSide
-        
-        //网络通知
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadHttp_notification), name: NSNotification.Name(kNotifyKeyReloadHttp), object: nil)
-        
-        //内存监控
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerMonitor), userInfo: nil, repeats: true)
-        guard let timer = timer else {return}//code never go here
-        RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+        self.logHeadView.delegate = self
+        self.view.backgroundColor = UIColor.clear
+        let selector = #selector(ManagerViewController.panDidFire(panner:))
+        let panGesture = UIPanGestureRecognizer(target: self, action: selector)
+        logHeadView.addGestureRecognizer(panGesture)
+    }
+
+    func didTapLogHeadView() {
+        Dotzu.sharedManager.displayedList = true
+        let storyboard = UIStoryboard(name: "Manager", bundle: Bundle(for: ManagerViewController.self))
+        guard let controller = storyboard.instantiateInitialViewController() else {
+            return
+        }
+        self.present(controller, animated: true, completion: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         Dotzu.sharedManager.displayedList = false
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-        timer?.invalidate()
+
+    @objc func panDidFire(panner: UIPanGestureRecognizer) {
+
+        if panner.state == .began {
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
+                self.logHeadView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }, completion: nil)
+        }
+
+        let offset = panner.translation(in: view)
+        panner.setTranslation(CGPoint.zero, in: view)
+        var center = logHeadView.center
+        center.x += offset.x
+        center.y += offset.y
+        logHeadView.center = center
+
+        if panner.state == .ended || panner.state == .cancelled {
+
+            let location = panner.location(in: view)
+            let velocity = panner.velocity(in: view)
+
+            var finalX: Double = 30
+            var finalY: Double = Double(location.y)
+
+            if location.x > UIScreen.main.bounds.size.width / 2 {
+                finalX = Double(UIScreen.main.bounds.size.width) - 30.0
+                self.logHeadView.changeSideDisplay(left: false)
+            } else {
+                self.logHeadView.changeSideDisplay(left: true)
+            }
+
+            let horizentalVelocity = abs(velocity.x)
+            let positionX = abs(finalX - Double(location.x))
+
+            let velocityForce = sqrt(pow(velocity.x, 2) * pow(velocity.y, 2))
+
+            let durationAnimation = (velocityForce > 1000.0) ? min(0.3, positionX / Double(horizentalVelocity)) : 0.3
+
+            if velocityForce > 1000.0 {
+                finalY += Double(velocity.y) * durationAnimation
+            }
+
+            if finalY > Double(UIScreen.main.bounds.size.height) - 50 {
+                finalY = Double(UIScreen.main.bounds.size.height) - 50
+            } else if finalY < 50 {
+                finalY = 50
+            }
+
+            UIView.animate(withDuration: durationAnimation * 5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 6,
+                           options: UIViewAnimationOptions.allowUserInteraction,
+                           animations: {
+                            self.logHeadView.center = CGPoint(x: finalX, y: finalY)
+                            self.logHeadView.transform = CGAffineTransform.identity
+                }, completion: nil)
+        }
     }
 
     func shouldReceive(point: CGPoint) -> Bool {
-        if Dotzu.sharedManager.displayedList {return true}
-        guard let logHeadView = logHeadView else {return false}
-        return logHeadView.frame.contains(point)
-    }
-    
-    //MARK: - ZYSuspensionViewDelegate
-    func suspensionViewClick(_ suspensionView: ZYSuspensionView!) {
-        LogsSettings.shared.isControllerPresent = true
-        
-        Dotzu.sharedManager.displayedList = true
-        let storyboard = UIStoryboard(name: "Manager", bundle: Bundle(for: ManagerViewController.self))
-        guard let controller = storyboard.instantiateInitialViewController() else {return}
-        self.present(controller, animated: true, completion: nil)
-    }
-    
-    //MARK: - target action
-    //内存监控
-    func timerMonitor() {
-        logHeadView?.setTitle(JxbDebugTool.shareInstance().bytesOfUsedMemory(), for: .normal)
-    }
-    
-    //MARK: - notification
-    //网络通知
-    func reloadHttp_notification() {
-        DispatchQueue.main.async { [weak self] in
-            self?.initLabelEvent(content: "🚀", logHeadView: self?.logHeadView)
+        if Dotzu.sharedManager.displayedList {
+            return true
         }
+        return self.logHeadView.frame.contains(point)
     }
 }
