@@ -12,19 +12,20 @@ protocol LogHeadViewDelegate: class {
     func didTapLogHeadView()
 }
 
-private let width: CGFloat = 80
-private let height: CGFloat = 80
+private let _width: CGFloat = 44
+private let _height: CGFloat = 44
 
 class LogHeadView: UIView {
     
     weak var delegate: LogHeadViewDelegate?
     
+    public let width: CGFloat = _width
+    public let height: CGFloat = _height
     private var timer: Timer? //liman mark
     
     //liman mark
     private lazy var label: UILabel! = {
-        let frame = CGRect(origin: CGPoint(x: width/4, y: height/4), size: CGSize(width: width/2, height: height/2))
-        let label = UILabel(frame: frame)
+        let label = UILabel(frame: CGRect(x:_width/8, y:_height/2 - 14.5/2, width:_width/8*6, height:14.5))
         label.textColor = Color.mainGreen
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .center
@@ -34,9 +35,9 @@ class LogHeadView: UIView {
     }()
     
     static var originalPosition: CGPoint {
-        return CGPoint(x: -width/8, y: UIScreen.main.bounds.size.height - width - width/8) //liman mark
+        return CGPoint(x: -_width/8, y: UIScreen.main.bounds.size.height - _width - _width/8) //liman mark
     }
-    static var size: CGSize {return CGSize(width: width, height: height)}
+    static var size: CGSize {return CGSize(width: _width, height: _height)}
     
     //MARK: - tool
     fileprivate func initLabelEvent(content: String) {
@@ -70,14 +71,14 @@ class LogHeadView: UIView {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.8
-        layer.cornerRadius = width/2
+        layer.cornerRadius = _width/2
         layer.shadowOffset = CGSize.zero
         sizeToFit()
         layer.masksToBounds = true
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.cornerRadius = width/2
+        gradientLayer.cornerRadius = _width/2
         gradientLayer.colors = Color.colorGradientHead
         layer.addSublayer(gradientLayer)
         

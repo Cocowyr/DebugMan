@@ -64,11 +64,11 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
             let location = panner.location(in: view)
             let velocity = panner.velocity(in: view)
 
-            var finalX: Double = 30
+            var finalX: Double = Double(self.logHeadView.width/8*3)
             var finalY: Double = Double(location.y)
 
             if location.x > UIScreen.main.bounds.size.width / 2 {
-                finalX = Double(UIScreen.main.bounds.size.width) - 30.0
+                finalX = Double(UIScreen.main.bounds.size.width) - Double(self.logHeadView.width/8*3)
             }
             
             self.logHeadView.changeSideDisplay()
@@ -84,10 +84,10 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
                 finalY += Double(velocity.y) * durationAnimation
             }
 
-            if finalY > Double(UIScreen.main.bounds.size.height) - 50 {
-                finalY = Double(UIScreen.main.bounds.size.height) - 50
-            } else if finalY < 50 {
-                finalY = 50
+            if finalY > Double(UIScreen.main.bounds.size.height) - Double(self.logHeadView.height/8*5) {
+                finalY = Double(UIScreen.main.bounds.size.height) - Double(self.logHeadView.height/8*5)
+            } else if finalY < Double(self.logHeadView.height/8*5) {
+                finalY = Double(self.logHeadView.height/8*5)
             }
 
             UIView.animate(withDuration: durationAnimation * 5,
