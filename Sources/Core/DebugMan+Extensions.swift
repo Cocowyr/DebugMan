@@ -169,7 +169,7 @@ extension UIView {
         let cornerLayer = CAShapeLayer()
         cornerLayer.frame = bounds
         cornerLayer.path = path.cgPath
-        layer.mask = cornerLayer
+        self.layer.mask = cornerLayer
     }
 }
 

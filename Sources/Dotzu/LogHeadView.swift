@@ -12,8 +12,8 @@ protocol LogHeadViewDelegate: class {
     func didTapLogHeadView()
 }
 
-private let _width: CGFloat = 44
-private let _height: CGFloat = 44
+private let _width: CGFloat = 40
+private let _height: CGFloat = 40
 
 class LogHeadView: UIView {
     
@@ -34,9 +34,15 @@ class LogHeadView: UIView {
         return label
     }()
     
+    
     static var originalPosition: CGPoint {
-        return CGPoint(x: -_width/8, y: UIScreen.main.bounds.size.height - _width - _width/8) //liman mark
+        //liman mark
+        if LogsSettings.shared.logHeadFrameX != 0 && LogsSettings.shared.logHeadFrameY != 0 {
+            return CGPoint(x: CGFloat(LogsSettings.shared.logHeadFrameX), y: CGFloat(LogsSettings.shared.logHeadFrameY))
+        }
+        return CGPoint(x: UIScreen.main.bounds.size.width - _width/8*7, y: UIScreen.main.bounds.size.height/2 - _height/2)
     }
+    
     static var size: CGSize {return CGSize(width: _width, height: _height)}
     
     //MARK: - tool
@@ -67,25 +73,25 @@ class LogHeadView: UIView {
     }
     
     fileprivate func initLayer() {
-        backgroundColor = UIColor.black
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 5
-        layer.shadowOpacity = 0.8
-        layer.cornerRadius = _width/2
-        layer.shadowOffset = CGSize.zero
-        sizeToFit()
-        layer.masksToBounds = true
+        self.backgroundColor = UIColor.black
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 0.8
+//        self.layer.cornerRadius = _width/2
+        self.layer.shadowOffset = CGSize.zero
+        self.sizeToFit()
+        self.layer.masksToBounds = true
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.cornerRadius = _width/2
+//        gradientLayer.cornerRadius = _width/2
         gradientLayer.colors = Color.colorGradientHead
-        layer.addSublayer(gradientLayer)
-        
-        addSubview(label)
+        self.layer.addSublayer(gradientLayer)
+                
+        self.addSubview(label)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LogHeadView.tap))
-        addGestureRecognizer(tapGesture)
+        self.addGestureRecognizer(tapGesture)
     }
     
     func changeSideDisplay() {
@@ -98,7 +104,7 @@ class LogHeadView: UIView {
         let oldSize = CGSize(width: newSize.height, height: newSize.width)
         let percent = center.y / oldSize.height * 100
         let newOrigin = newSize.height * percent / 100
-        let originX = frame.origin.x < newSize.height / 2 ? 30 : newSize.width - 30
+        let originX = frame.origin.x < newSize.height / 2 ? _width/8*3 : newSize.width - _width/8*3
         self.center = CGPoint(x: originX, y: newOrigin)
     }
     
@@ -107,16 +113,12 @@ class LogHeadView: UIView {
         super.init(frame: frame)
         initLayer()
         
-        //liman mark
-        
         //网络通知
         NotificationCenter.default.addObserver(self, selector: #selector(reloadHttp_notification), name: NSNotification.Name(kNotifyKeyReloadHttp), object: nil)
         
         //内存监控
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerMonitor), userInfo: nil, repeats: true)
-        guard let timer = timer else {
-            return //code never go here
-        }
+        guard let timer = timer else {return}//code never go here
         RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
     }
     
