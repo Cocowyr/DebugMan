@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EA02F4A11FE26CBA00DF34EF /* NetworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4921FE26CBA00DF34EF /* NetworkCell.xib */; };
 		EA02F4A21FE26CBA00DF34EF /* Logs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4931FE26CBA00DF34EF /* Logs.storyboard */; };
-		EA02F4A31FE26CBA00DF34EF /* debugman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4951FE26CBA00DF34EF /* debugman_logo.png */; };
 		EA02F4A41FE26CBA00DF34EF /* debugman_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4961FE26CBA00DF34EF /* debugman_app@2x.png */; };
 		EA02F4A51FE26CBA00DF34EF /* debugman_logs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */; };
 		EA02F4A61FE26CBA00DF34EF /* debugman_network@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */; };
@@ -85,12 +84,12 @@
 		EA44B9B31FE140D600DF7FF6 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9691FE140D600DF7FF6 /* AFNetworkReachabilityManager.m */; };
 		EA44B9B41FE140D600DF7FF6 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96A1FE140D600DF7FF6 /* AFSecurityPolicy.m */; };
 		EA44B9B51FE140D600DF7FF6 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */; };
+		EA5066081FE63A4C00F6A386 /* debugman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5066071FE63A4C00F6A386 /* debugman_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA02F4921FE26CBA00DF34EF /* NetworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkCell.xib; sourceTree = "<group>"; };
 		EA02F4931FE26CBA00DF34EF /* Logs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Logs.storyboard; sourceTree = "<group>"; };
-		EA02F4951FE26CBA00DF34EF /* debugman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_logo.png; sourceTree = "<group>"; };
 		EA02F4961FE26CBA00DF34EF /* debugman_app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_app@2x.png"; sourceTree = "<group>"; };
 		EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_logs@2x.png"; sourceTree = "<group>"; };
 		EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_network@2x.png"; sourceTree = "<group>"; };
@@ -194,6 +193,7 @@
 		EA44B96A1FE140D600DF7FF6 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		EA44B96B1FE140D600DF7FF6 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		EA44B96C1FE140D600DF7FF6 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		EA5066071FE63A4C00F6A386 /* debugman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 		EA02F4941FE26CBA00DF34EF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				EA02F4951FE26CBA00DF34EF /* debugman_logo.png */,
+				EA5066071FE63A4C00F6A386 /* debugman_logo.png */,
 				EA02F4961FE26CBA00DF34EF /* debugman_app@2x.png */,
 				EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */,
 				EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */,
@@ -466,9 +466,9 @@
 				EA02F4AD1FE26CBA00DF34EF /* Manager.storyboard in Resources */,
 				EA44B7911FE13ECD00DF7FF6 /* LaunchScreen.storyboard in Resources */,
 				EA02F4AB1FE26CBA00DF34EF /* debugman_bugs@2x.png in Resources */,
+				EA5066081FE63A4C00F6A386 /* debugman_logo.png in Resources */,
 				EA02F4A61FE26CBA00DF34EF /* debugman_network@2x.png in Resources */,
 				EA02F4AE1FE26CBA00DF34EF /* App.storyboard in Resources */,
-				EA02F4A31FE26CBA00DF34EF /* debugman_logo.png in Resources */,
 				EA44B78E1FE13ECD00DF7FF6 /* Assets.xcassets in Resources */,
 				EA02F4A81FE26CBA00DF34EF /* debugman_close@2x.png in Resources */,
 				EA02F4A11FE26CBA00DF34EF /* NetworkCell.xib in Resources */,
