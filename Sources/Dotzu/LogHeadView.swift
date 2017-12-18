@@ -12,8 +12,8 @@ protocol LogHeadViewDelegate: class {
     func didTapLogHeadView()
 }
 
-private let _width: CGFloat = 40
-private let _height: CGFloat = 20
+private let _width: CGFloat = 130/2
+private let _height: CGFloat = 130/2
 
 class LogHeadView: UIView {
     
