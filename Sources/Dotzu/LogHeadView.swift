@@ -13,7 +13,7 @@ protocol LogHeadViewDelegate: class {
 }
 
 private let _width: CGFloat = 40
-private let _height: CGFloat = 40
+private let _height: CGFloat = 20
 
 class LogHeadView: UIView {
     
@@ -77,14 +77,14 @@ class LogHeadView: UIView {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 0.8
-//        self.layer.cornerRadius = _width/2
+        self.layer.cornerRadius = _height/2
         self.layer.shadowOffset = CGSize.zero
         self.sizeToFit()
         self.layer.masksToBounds = true
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-//        gradientLayer.cornerRadius = _width/2
+        gradientLayer.cornerRadius = _height/2
         gradientLayer.colors = Color.colorGradientHead
         self.layer.addSublayer(gradientLayer)
                 

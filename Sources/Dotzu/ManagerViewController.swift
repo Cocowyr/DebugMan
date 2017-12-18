@@ -29,13 +29,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
         let selector = #selector(ManagerViewController.panDidFire(panner:))
         let panGesture = UIPanGestureRecognizer(target: self, action: selector)
         logHeadView.addGestureRecognizer(panGesture)
-        
-        //liman mark
-        if LogHeadView.originalPosition.x > UIScreen.main.bounds.size.width / 2 {
-            self.logHeadView.addCorner(roundingCorners: [.topLeft, .bottomLeft], cornerSize: CGSize(width:self.logHeadView.width/2, height:self.logHeadView.height/2))
-        }else{
-            self.logHeadView.addCorner(roundingCorners: [.topRight, .bottomRight], cornerSize: CGSize(width:self.logHeadView.width/2, height:self.logHeadView.height/2))
-        }
     }
 
     func didTapLogHeadView() {
@@ -57,9 +50,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { [weak self] in
                 self?.logHeadView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }, completion: nil)
-            
-            //liman mark
-            self.logHeadView.addCorner(roundingCorners: [.topRight, .bottomRight, .topLeft, .bottomLeft], cornerSize: CGSize(width:self.logHeadView.width/2, height:self.logHeadView.height/2))
         }
 
         let offset = panner.translation(in: view)
@@ -97,7 +87,7 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
             if finalY > Double(UIScreen.main.bounds.size.height) - Double(self.logHeadView.height/8*5) {
                 finalY = Double(UIScreen.main.bounds.size.height) - Double(self.logHeadView.height/8*5)
             } else if finalY < Double(self.logHeadView.height/8*5) {
-                finalY = Double(self.logHeadView.height/8*5)
+                finalY = Double(self.logHeadView.height/8*5) + 20//状态栏高度
             }
 
             UIView.animate(withDuration: durationAnimation * 5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 6, options: UIViewAnimationOptions.allowUserInteraction, animations: { [weak self] in
@@ -108,13 +98,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
                     LogsSettings.shared.logHeadFrameX = Float(x)
                     LogsSettings.shared.logHeadFrameY = Float(y)
                 })
-            
-            //liman mark
-            if location.x > UIScreen.main.bounds.size.width / 2 {
-                self.logHeadView.addCorner(roundingCorners: [.topLeft, .bottomLeft], cornerSize: CGSize(width:self.logHeadView.width/2, height:self.logHeadView.height/2))
-            }else{
-                self.logHeadView.addCorner(roundingCorners: [.topRight, .bottomRight], cornerSize: CGSize(width:self.logHeadView.width/2, height:self.logHeadView.height/2))
-            }
         }
     }
 
