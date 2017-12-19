@@ -333,6 +333,7 @@
 		EA44B9191FE140D600DF7FF6 /* Dotzu */ = {
 			isa = PBXGroup;
 			children = (
+				EA44B9231FE140D600DF7FF6 /* LogsViewController.swift */,
 				EA44B91A1FE140D600DF7FF6 /* LogTabBarViewController.swift */,
 				EA44B91B1FE140D600DF7FF6 /* LogCrash.swift */,
 				EA44B91C1FE140D600DF7FF6 /* LogGenerator.swift */,
@@ -342,7 +343,6 @@
 				EA44B9201FE140D600DF7FF6 /* LogTableViewCell.swift */,
 				EA44B9211FE140D600DF7FF6 /* NotificationCenter.swift */,
 				EA44B9221FE140D600DF7FF6 /* DeviceModel.swift */,
-				EA44B9231FE140D600DF7FF6 /* LogsViewController.swift */,
 				EA44B9241FE140D600DF7FF6 /* LogLevel.swift */,
 				EA44B9261FE140D600DF7FF6 /* DetailCrashTableViewController.swift */,
 				EA44B9271FE140D600DF7FF6 /* ManagerWindow.swift */,
@@ -459,7 +459,7 @@
 					EA44B7821FE13ECD00DF7FF6 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -766,8 +766,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3XZ878L8N;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -787,8 +787,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3XZ878L8N;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

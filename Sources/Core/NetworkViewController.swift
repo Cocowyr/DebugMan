@@ -14,7 +14,6 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
     var cacheModels: Array<JxbHttpModel>?
     var searchModels: Array<JxbHttpModel>?
     
-    var _searchText: String = ""
     var foo: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
@@ -62,7 +61,7 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
         self.models = (JxbHttpDatasource.shareInstance().httpModels as NSArray as? [JxbHttpModel])
         self.cacheModels = self.models
         
-        self.searchLogic(self._searchText)
+        self.searchLogic(LogsSettings.shared.networkSearchWord ?? "")
 
         dispatch_main_async_safe { [weak self] in
             self?.tableView.reloadData()
@@ -118,6 +117,7 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        searchBar.text = LogsSettings.shared.networkSearchWord
         tableView.tableFooterView = UIView()
         
         //hide searchBar icon
@@ -271,9 +271,8 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
-        _searchText = searchText
-        
-        searchLogic(_searchText)
+        LogsSettings.shared.networkSearchWord = searchText
+        searchLogic(searchText)
         
         dispatch_main_async_safe { [weak self] in
             self?.tableView.reloadData()
