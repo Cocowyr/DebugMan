@@ -17,10 +17,6 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
     var _searchText: String = ""
     var foo: Bool = false
     
-    let keyboardMan = KeyboardMan()
-    //键盘是否弹出
-    var keyboardShow: Bool = false
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -116,7 +112,7 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
         setNeedsStatusBarAppearanceUpdate()
         
         //liman mark
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadHttp_notification), name: NSNotification.Name(kNotifyKeyReloadHttp), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadHttp_notification(_ :)), name: NSNotification.Name(kNotifyKeyReloadHttp), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tapDebugWin), name: NSNotification.Name("tapDebugWin"), object: nil)
         
         tableView.dataSource = self
@@ -129,16 +125,6 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
         textFieldInsideSearchBar.leftViewMode = UITextFieldViewMode.never
         
         reloadHttp(true)
-        
-        //键盘
-        keyboardMan.postKeyboardInfo = { [weak self] keyboardMan, keyboardInfo in
-            switch keyboardInfo.action {
-            case .show:
-                self?.keyboardShow = true
-            case .hide:
-                self?.keyboardShow = false
-            }
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -188,12 +174,6 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //键盘
-        if keyboardShow == true {
-            searchBar.resignFirstResponder()
-            return
-        }
-        
         tableView.deselectRow(at: indexPath, animated: true)
         guard let models = models else {return}
         
@@ -313,7 +293,7 @@ class NetworkViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     //MARK: - notification
-    @objc func reloadHttp_notification() {
+    @objc func reloadHttp_notification(_ notification: Notification) {
         reloadHttp()
     }
     
