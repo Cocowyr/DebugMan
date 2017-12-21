@@ -25,9 +25,9 @@ class LogHeadView: UIView {
     
     //liman mark
     private lazy var label: UILabel! = {
-        let label = UILabel(frame: CGRect(x:_width/8, y:_height/2 - 14.5/2, width:_width/8*6, height:14.5))
+        let label = UILabel(frame: CGRect(x:_width/8, y:_height/2 - 16/2, width:_width/8*6, height:16))
         label.textColor = Color.mainGreen
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.text = JxbDebugTool.shareInstance().bytesOfUsedMemory()

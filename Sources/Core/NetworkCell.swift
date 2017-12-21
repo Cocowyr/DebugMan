@@ -51,17 +51,17 @@ class NetworkCell: UITableViewCell {
             requestUrlTextView.text = httpModel?.url.absoluteString
             if requestUrlTextView.text?.contains(mainHost) == true {
                 if #available(iOS 8.2, *) {
-                    requestUrlTextView.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightHeavy)
+                    requestUrlTextView.font = UIFont.systemFont(ofSize: 13, weight: UIFontWeightHeavy)
                 } else {
                     // Fallback on earlier versions
-                    requestUrlTextView.font = UIFont.boldSystemFont(ofSize: 14)
+                    requestUrlTextView.font = UIFont.boldSystemFont(ofSize: 13)
                 }
             }else{
                 if #available(iOS 8.2, *) {
-                    requestUrlTextView.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
+                    requestUrlTextView.font = UIFont.systemFont(ofSize: 13, weight: UIFontWeightRegular)
                 } else {
                     // Fallback on earlier versions
-                    requestUrlTextView.font = UIFont.systemFont(ofSize: 14)
+                    requestUrlTextView.font = UIFont.systemFont(ofSize: 13)
                 }
             }
             
