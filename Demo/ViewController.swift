@@ -19,9 +19,7 @@ class ViewController: UIViewController {
         mockPUT()//mock PUT
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        mockGET()//mock GET
-    }
+    
     
     //MARK: - mock GET
     func mockGET() {

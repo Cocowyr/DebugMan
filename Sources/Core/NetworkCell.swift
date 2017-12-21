@@ -83,15 +83,11 @@ class NetworkCell: UITableViewCell {
             statusCodeLabel.text = httpModel?.statusCode
             if statusCodeLabel.text == "200" {
                 statusCodeLabel.textColor = Color.mainGreen
-            }
-            else if statusCodeLabel.text == "500" {
-                statusCodeLabel.textColor = UIColor.init(hexString: "#ffbd2e")
-            }
-            else if statusCodeLabel.text == "404" {
-                statusCodeLabel.textColor = UIColor.init(hexString: "#808080")
-            }
-            else{//"0"
+            }else{
                 statusCodeLabel.textColor = UIColor.init(hexString: "#ff0000")
+            }
+            if statusCodeLabel.text == "0" {
+                statusCodeLabel.text = "❌"
             }
             
             //是否显示图片label
