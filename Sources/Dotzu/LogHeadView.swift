@@ -169,7 +169,7 @@ class LogHeadView: UIView {
     
     //MARK: - notification
     //网络通知
-    func reloadHttp_notification(_ notification: Notification) {
+    @objc func reloadHttp_notification(_ notification: Notification) {
         
         guard let userInfo = notification.userInfo else {return}
         let statusCode = userInfo["statusCode"] as? String
@@ -197,7 +197,7 @@ class LogHeadView: UIView {
     
     //MARK: - target action
     //内存监控
-    func timerMonitor() {
+    @objc func timerMonitor() {
         _label.text = JxbDebugTool.shareInstance().bytesOfUsedMemory()
     }
     

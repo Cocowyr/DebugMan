@@ -129,7 +129,7 @@ class NetworkCell: UITableViewCell {
     }
     
     //MARK: - target action
-    func tapEditView() {
+    @objc func tapEditView() {
         if let tapEditViewCallback = tapEditViewCallback {
             tapEditViewCallback(httpModel)
         }

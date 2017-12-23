@@ -15,7 +15,7 @@
 #define GB    (MB * 1024)
 
 @interface JxbDebugTool()
-@property (nonatomic, strong) UIWindow    *debugWin;
+@property (nonatomic, strong) UIWindow    *statusBar;
 @end
 
 @implementation JxbDebugTool
@@ -66,27 +66,27 @@
     }
 }
 
-- (void)showDebugWin
+- (void)showStatusBar
 {
-    if (self.debugWin) {
+    if (self.statusBar) {
         return;
     }
     
     __weak typeof (self) wSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        wSelf.debugWin = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-        wSelf.debugWin.windowLevel = kDotzuWindowLevel + 1;
-        wSelf.debugWin.hidden = NO;
-        wSelf.debugWin.backgroundColor = [UIColor clearColor];
-        [wSelf.debugWin addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapStatusBar)]];
+        wSelf.statusBar = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+        wSelf.statusBar.windowLevel = kDotzuWindowLevel + 1;
+        wSelf.statusBar.hidden = NO;
+        wSelf.statusBar.backgroundColor = [UIColor clearColor];
+        [wSelf.statusBar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapStatusBar)]];
     });
 }
 
-- (void)hideDebugWin
+- (void)hideStatusBar
 {
-    if (self.debugWin) {
-        [self.debugWin removeFromSuperview];
-        self.debugWin = nil;
+    if (self.statusBar) {
+        [self.statusBar removeFromSuperview];
+        self.statusBar = nil;
     }
 }
 

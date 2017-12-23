@@ -24,13 +24,13 @@ class LogsSettings {
             if isControllerPresent == true {
                 Dotzu.sharedManager.window.makeKeyAndVisible()
                 foo = true
-                JxbDebugTool.shareInstance().showDebugWin()
+                JxbDebugTool.shareInstance().showStatusBar()
             }else{
                 if foo == true {
                     if let window = UIApplication.shared.delegate?.window {
                         window?.makeKeyAndVisible()
                     }
-                    JxbDebugTool.shareInstance().hideDebugWin()
+                    JxbDebugTool.shareInstance().hideStatusBar()
                 }
             }
         }

@@ -18,6 +18,8 @@ class DetailCrashTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(tapStatusBar), name: NSNotification.Name("tapStatusBar"), object: nil)
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
         tableView.delegate = self
@@ -31,11 +33,21 @@ class DetailCrashTableViewController: UITableViewController {
         textviewStackTraces.text = contentStack
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    @objc func tapStatusBar() {
+        dispatch_main_async_safe { [weak self] in
+            self?.tableView.setContentOffset( CGPoint(x: 0, y: 0) , animated: true)
+        }
     }
 }
