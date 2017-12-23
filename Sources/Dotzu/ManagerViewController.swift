@@ -14,7 +14,6 @@ class ManagerViewController: UIViewController, LogHeadViewDelegate {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
         self.view.addSubview(self.logHeadView)
     }
 

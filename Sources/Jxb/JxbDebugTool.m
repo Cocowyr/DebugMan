@@ -77,7 +77,8 @@
         wSelf.statusBar = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
         wSelf.statusBar.windowLevel = kDotzuWindowLevel + 1;
         wSelf.statusBar.hidden = NO;
-        wSelf.statusBar.backgroundColor = [UIColor clearColor];
+        wSelf.statusBar.backgroundColor = [UIColor purpleColor];
+        wSelf.statusBar.alpha = 0.5;
         [wSelf.statusBar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapStatusBar)]];
     });
 }
