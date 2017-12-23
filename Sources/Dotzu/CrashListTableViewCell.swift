@@ -27,9 +27,9 @@ class CrashListTableViewCell: UITableViewCell {
             let attstr = NSMutableAttributedString(string: content)
             
             attstr.addAttribute(NSForegroundColorAttributeName,
-                                value: UIColor.white, range: NSMakeRange(0, content.characters.count))
+                                value: UIColor.white, range: NSMakeRange(0, content.count))
             
-            let range = NSMakeRange(0, formatDate.characters.count)
+            let range = NSMakeRange(0, formatDate.count)
             attstr.addAttribute(NSForegroundColorAttributeName, value: Color.mainGreen, range: range)
             attstr.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 12), range: range)
             
