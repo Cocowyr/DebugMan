@@ -11,30 +11,6 @@ import Foundation
 class LogsSettings {
 
     static let shared = LogsSettings()
-
-    var foo: Bool = false
-    
-    
-    var isControllerPresent: Bool {
-        didSet {
-            UserDefaults.standard.set(isControllerPresent, forKey: "isControllerPresent")
-            UserDefaults.standard.synchronize()
-            
-            //第一响应者链
-            if isControllerPresent == true {
-                Dotzu.sharedManager.window.makeKeyAndVisible()
-                foo = true
-                JxbDebugTool.shareInstance().showStatusBar()
-            }else{
-                if foo == true {
-                    if let window = UIApplication.shared.delegate?.window {
-                        window?.makeKeyAndVisible()
-                    }
-                    JxbDebugTool.shareInstance().hideStatusBar()
-                }
-            }
-        }
-    }
     
     var mockTimeoutInterval: TimeInterval {
         didSet {
@@ -112,7 +88,6 @@ class LogsSettings {
         maxLogsCount = UserDefaults.standard.integer(forKey: "maxLogsCount")
         mockTimeoutInterval = UserDefaults.standard.double(forKey: "mockTimeoutInterval")
         isBallShowScreen = UserDefaults.standard.bool(forKey: "isBallShowScreen")
-        isControllerPresent = UserDefaults.standard.bool(forKey: "isControllerPresent")
         tabBarSelectItem = UserDefaults.standard.integer(forKey: "tabBarSelectItem")
         logHeadFrameX = UserDefaults.standard.float(forKey: "logHeadFrameX")
         logHeadFrameY = UserDefaults.standard.float(forKey: "logHeadFrameY")

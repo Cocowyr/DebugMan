@@ -73,7 +73,6 @@ public class DebugMan : NSObject {
         //#if DEBUG
         NotificationCenter.default.addObserver(self, selector: #selector(methodThatIsCalledAfterShake), name: NSNotification.Name(DHCSHakeNotificationName), object: nil)
         
-        LogsSettings.shared.isControllerPresent = false
         LogsSettings.shared.logSearchWord = nil
         LogsSettings.shared.networkSearchWord = nil
         
@@ -91,10 +90,8 @@ public class DebugMan : NSObject {
     //MARK: - notification method
     @objc private func methodThatIsCalledAfterShake() {
         
-        if LogsSettings.shared.isControllerPresent == true {return}
-        
         if LogsSettings.shared.isBallShowScreen == false {
-            guard let extraControllers = LogsSettings.shared.extraControllers else {return}//code never go here
+            guard let extraControllers = LogsSettings.shared.extraControllers else {return}
             enable(mainHost: LogsSettings.shared.mainHost, ignoredHosts: LogsSettings.shared.ignoredHosts, onlyHosts: LogsSettings.shared.onlyHosts, extraControllers: extraControllers)
         }
         else if LogsSettings.shared.isBallShowScreen == true {

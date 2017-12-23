@@ -15,7 +15,7 @@ protocol LogHeadViewDelegate: class {
 private let _width: CGFloat = 130/2
 private let _height: CGFloat = 130/2
 
-class LogHeadView: UIView {
+class LogHeadView: UIWindow {
     
     weak var delegate: LogHeadViewDelegate?
     
@@ -62,7 +62,7 @@ class LogHeadView: UIView {
                 self.addSubview(label)
             }else{
                 label.frame = CGRect(x: self.center.x - WH/2, y: self.center.y - WH/2, width: WH, height: WH)
-                self.superview?.addSubview(label)
+                window?.addSubview(label)
             }
             //step 3
             UIView.animate(withDuration: 0.8, animations: {
@@ -95,7 +95,7 @@ class LogHeadView: UIView {
                 self.addSubview(label)
             }else{
                 label.frame = CGRect(x: self.center.x - WH/2, y: self.center.y - WH/2, width: WH, height: WH)
-                self.superview?.addSubview(label)
+                window?.addSubview(label)
             }
             //step 4
             UIView.animate(withDuration: 0.8, animations: {
@@ -149,6 +149,8 @@ class LogHeadView: UIView {
         super.init(frame: frame)
         initLayer()
         
+        self.windowLevel = UIWindowLevel(kDotzuWindowLevel)
+        
         //添加手势
         let selector = #selector(LogHeadView.panDidFire(panner:))
         let panGesture = UIPanGestureRecognizer(target: self, action: selector)
@@ -159,7 +161,7 @@ class LogHeadView: UIView {
         
         //内存监控
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerMonitor), userInfo: nil, repeats: true)
-        guard let timer = timer else {return}//code never go here
+        guard let timer = timer else {return}
         RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
     }
     
@@ -208,18 +210,19 @@ class LogHeadView: UIView {
     
     @objc func tap() {
         delegate?.didTapLogHeadView()
-        LogsSettings.shared.isControllerPresent = true //liman mark
     }
     
     @objc func panDidFire(panner: UIPanGestureRecognizer) {
+        guard let window = UIApplication.shared.delegate?.window else {return}
+
         if panner.state == .began {
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { [weak self] in
                 self?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 }, completion: nil)
         }
         
-        let offset = panner.translation(in: self.superview)
-        panner.setTranslation(CGPoint.zero, in: self.superview)
+        let offset = panner.translation(in: window)
+        panner.setTranslation(CGPoint.zero, in: window)
         var center = self.center
         center.x += offset.x
         center.y += offset.y
@@ -227,8 +230,8 @@ class LogHeadView: UIView {
         
         if panner.state == .ended || panner.state == .cancelled {
             
-            let location = panner.location(in: self.superview)
-            let velocity = panner.velocity(in: self.superview)
+            let location = panner.location(in: window)
+            let velocity = panner.velocity(in: window)
             
             var finalX: Double = Double(self.width/8*3)
             var finalY: Double = Double(location.y)

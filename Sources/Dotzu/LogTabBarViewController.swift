@@ -10,6 +10,11 @@ import UIKit
 
 class LogTabBarViewController: UITabBarController {
 
+    static func instanceFromStoryBoard() -> LogTabBarViewController {
+        let storyboard = UIStoryboard(name: "Logs", bundle: Bundle(for: DebugMan.self))
+        return storyboard.instantiateViewController(withIdentifier: "LogTabBarViewController") as! LogTabBarViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = Color.mainGreen
@@ -62,7 +67,6 @@ class LogTabBarViewController: UITabBarController {
     //MARK: - target action
     @objc func exit() {
         dismiss(animated: true, completion: nil)
-        LogsSettings.shared.isControllerPresent = false //liman mark
     }
     
     

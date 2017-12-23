@@ -61,8 +61,4 @@
  */
 - (NSString *)bytesOfUsedMemory;
 
-//liman mark
-- (void)showStatusBar;
-- (void)hideStatusBar;
-
 @end
