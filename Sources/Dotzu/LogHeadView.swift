@@ -263,7 +263,8 @@ class LogHeadView: UIWindow {
                 self?.center = CGPoint(x: finalX, y: finalY)
                 self?.transform = CGAffineTransform.identity
                 }, completion: { [weak self] _ in
-                    guard let x = self?.frame.origin.x, let y = self?.frame.origin.y else {return}
+                    guard let x = self?.frame.origin.x, let y = self?.frame.origin.y, let width = self?.frame.size.width else {return}
+                    if x >= UIScreen.main.bounds.size.width || x <= -width {return}
                     LogsSettings.shared.logHeadFrameX = Float(x)
                     LogsSettings.shared.logHeadFrameY = Float(y)
             })
