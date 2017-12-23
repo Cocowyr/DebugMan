@@ -15,16 +15,28 @@ class LogTabBarViewController: UITabBarController {
         return storyboard.instantiateViewController(withIdentifier: "LogTabBarViewController") as! LogTabBarViewController
     }
     
+    //MARK: - init
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = Color.mainGreen
         
-        foo()
+        setChildControllers()
         
         self.selectedIndex = LogsSettings.shared.tabBarSelectItem
     }
     
-    func foo() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Dotzu.sharedManager.disable()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Dotzu.sharedManager.enable()
+    }
+    
+    //MARK: - private
+    func setChildControllers() {
         let Logs = UIStoryboard(name: "Logs", bundle: Bundle(for: DebugMan.self))
         let Network = UIStoryboard(name: "Network", bundle: Bundle(for: DebugMan.self))
         let App = UIStoryboard(name: "App", bundle: Bundle(for: DebugMan.self))

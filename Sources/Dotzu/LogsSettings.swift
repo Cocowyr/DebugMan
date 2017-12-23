@@ -18,9 +18,9 @@ class LogsSettings {
             UserDefaults.standard.synchronize()
         }
     }
-    var isBallShowScreen: Bool {
+    var isBallShow: Bool {
         didSet {
-            UserDefaults.standard.set(isBallShowScreen, forKey: "isBallShowScreen")
+            UserDefaults.standard.set(isBallShow, forKey: "isBallShow")
             UserDefaults.standard.synchronize()
         }
     }
@@ -87,7 +87,7 @@ class LogsSettings {
         mainHost = UserDefaults.standard.string(forKey: "mainHost") ?? ""
         maxLogsCount = UserDefaults.standard.integer(forKey: "maxLogsCount")
         mockTimeoutInterval = UserDefaults.standard.double(forKey: "mockTimeoutInterval")
-        isBallShowScreen = UserDefaults.standard.bool(forKey: "isBallShowScreen")
+        isBallShow = UserDefaults.standard.bool(forKey: "isBallShow")
         tabBarSelectItem = UserDefaults.standard.integer(forKey: "tabBarSelectItem")
         logHeadFrameX = UserDefaults.standard.float(forKey: "logHeadFrameX")
         logHeadFrameY = UserDefaults.standard.float(forKey: "logHeadFrameY")

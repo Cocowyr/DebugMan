@@ -43,15 +43,18 @@ public class DebugMan : NSObject {
         LogsSettings.shared.ignoredHosts = ignoredHosts
     }
     if launchShow == true {
-        LogsSettings.shared.isBallShowScreen = true
+        LogsSettings.shared.isBallShow = true
     }else {
-        LogsSettings.shared.isBallShowScreen = false
+        LogsSettings.shared.isBallShow = false
         return
     }
     
     Dotzu.sharedManager.enable()
     JxbDebugTool.shareInstance().enable()
-    LogsSettings.shared.isBallShowScreen = true
+    Logger.shared.enable = true
+    LoggerCrash.shared.enable = true
+    LogsSettings.shared.isBallShow = true
+    
     LogsSettings.shared.maxLogsCount = maxLogsCount
     LogsSettings.shared.mockTimeoutInterval = mockTimeoutInterval
 //#endif
@@ -62,7 +65,9 @@ public class DebugMan : NSObject {
     private func disable() {
         Dotzu.sharedManager.disable()
         JxbDebugTool.shareInstance().disable()
-        LogsSettings.shared.isBallShowScreen = false
+        Logger.shared.enable = false
+        LoggerCrash.shared.enable = false
+        LogsSettings.shared.isBallShow = false
     }
     
     
@@ -90,11 +95,12 @@ public class DebugMan : NSObject {
     //MARK: - notification method
     @objc private func methodThatIsCalledAfterShake() {
         
-        if LogsSettings.shared.isBallShowScreen == false {
+        if LogsSettings.shared.isBallShow == false {
             guard let extraControllers = LogsSettings.shared.extraControllers else {return}
+            
             enable(mainHost: LogsSettings.shared.mainHost, ignoredHosts: LogsSettings.shared.ignoredHosts, onlyHosts: LogsSettings.shared.onlyHosts, extraControllers: extraControllers)
         }
-        else if LogsSettings.shared.isBallShowScreen == true {
+        else if LogsSettings.shared.isBallShow == true {
             disable()
         }
     }

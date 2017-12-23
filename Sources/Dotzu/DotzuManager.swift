@@ -26,8 +26,6 @@ public class Dotzu: NSObject, LogHeadViewDelegate {
                 self?.logHeadView?.isHidden = false
             }
         }
-        Logger.shared.enable = true
-        LoggerCrash.shared.enable = true
     }
 
     public func disable() {
@@ -36,8 +34,6 @@ public class Dotzu: NSObject, LogHeadViewDelegate {
                 self?.logHeadView?.isHidden = true
             }
         }
-        Logger.shared.enable = false
-        LoggerCrash.shared.enable = false
     }
     
     //MARK: - LogHeadViewDelegate
