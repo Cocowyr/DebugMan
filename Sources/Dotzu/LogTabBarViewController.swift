@@ -27,12 +27,32 @@ class LogTabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Dotzu.sharedManager.disable()
+        
+        guard let x = Dotzu.sharedManager.logHeadView?.frame.origin.x, let width = Dotzu.sharedManager.logHeadView?.frame.size.width else {return}
+        if x > 0 {
+            UIView.animate(withDuration: 0.2) {
+                Dotzu.sharedManager.logHeadView?.frame.origin.x = UIScreen.main.bounds.size.width
+            }
+        }else{
+            UIView.animate(withDuration: 0.2) {
+                Dotzu.sharedManager.logHeadView?.frame.origin.x = -width
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Dotzu.sharedManager.enable()
+        
+        guard let x = Dotzu.sharedManager.logHeadView?.frame.origin.x, let width = Dotzu.sharedManager.logHeadView?.frame.size.width else {return}
+        if x > 0 {
+            UIView.animate(withDuration: 0.2) {
+                Dotzu.sharedManager.logHeadView?.frame.origin.x = UIScreen.main.bounds.size.width - width/8*7
+            }
+        }else{
+            UIView.animate(withDuration: 0.2) {
+                Dotzu.sharedManager.logHeadView?.frame.origin.x = -width + width/8*7
+            }
+        }
     }
     
     //MARK: - private
