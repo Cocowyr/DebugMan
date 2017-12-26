@@ -12,7 +12,6 @@ class LogTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelContent: UITextView!
     @IBOutlet weak var viewTypeLogColor: UIView!
-    @IBOutlet weak var tagView: UIView!
     
     
     override func awakeFromNib() {
@@ -32,9 +31,9 @@ class LogTableViewCell: UITableViewCell {
             
             //tag
             if model.isTag == true {
-                tagView.isHidden = false
+                self.contentView.backgroundColor = UIColor.init(hexString: "#007aff")
             }else{
-                tagView.isHidden = true
+                self.contentView.backgroundColor = UIColor.black
             }
         }
     }
