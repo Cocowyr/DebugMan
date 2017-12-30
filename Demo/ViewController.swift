@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        printColor("test color print").with(.red) //test color print
+        
         mockGET()    //mock GET
         mockDELETE() //mock DELETE
         mockPOST()   //mock POST

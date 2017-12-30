@@ -13,21 +13,14 @@ class LogTableViewCell: UITableViewCell {
     @IBOutlet weak var labelContent: UITextView!
     @IBOutlet weak var viewTypeLogColor: UIView!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        viewTypeLogColor.layer.cornerRadius = 3
-    }
-    
     var model: Log? {
         didSet {
             guard let model = model else { return }
             
             labelContent.text = nil
-            let format = LoggerFormat.format(log: model)
+            let format = LoggerFormat.format(model)
             labelContent.text = format.str
             labelContent.attributedText = format.attr
-            viewTypeLogColor.backgroundColor = model.level.color
             
             //tag
             if model.isTag == true {
