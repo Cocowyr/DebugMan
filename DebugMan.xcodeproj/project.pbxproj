@@ -14,8 +14,6 @@
 		EA02F4A51FE26CBA00DF34EF /* debugman_logs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */; };
 		EA02F4A61FE26CBA00DF34EF /* debugman_network@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */; };
 		EA02F4A81FE26CBA00DF34EF /* debugman_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49A1FE26CBA00DF34EF /* debugman_close@2x.png */; };
-		EA02F4A91FE26CBA00DF34EF /* debugman_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49B1FE26CBA00DF34EF /* debugman_edit@2x.png */; };
-		EA02F4AA1FE26CBA00DF34EF /* debugman_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49C1FE26CBA00DF34EF /* debugman_refresh.png */; };
 		EA02F4AB1FE26CBA00DF34EF /* debugman_bugs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49D1FE26CBA00DF34EF /* debugman_bugs@2x.png */; };
 		EA02F4AC1FE26CBA00DF34EF /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49E1FE26CBA00DF34EF /* Network.storyboard */; };
 		EA02F4AD1FE26CBA00DF34EF /* Manager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA02F49F1FE26CBA00DF34EF /* Manager.storyboard */; };
@@ -75,6 +73,7 @@
 		EA44B99D1FE140D600DF7FF6 /* UIWindow+DHCShakeRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9451FE140D600DF7FF6 /* UIWindow+DHCShakeRecognizer.m */; };
 		EA44B99E1FE140D600DF7FF6 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44B9461FE140D600DF7FF6 /* NSString+Utils.m */; };
 		EA9B47DD1FEA6084001DD838 /* debugman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B47DC1FEA6084001DD838 /* debugman_logo.png */; };
+		EAEB4D2F1FFBD79000C06F6A /* debugman_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = EAEB4D2E1FFBD79000C06F6A /* debugman_edit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,8 +86,6 @@
 		EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_logs@2x.png"; sourceTree = "<group>"; };
 		EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_network@2x.png"; sourceTree = "<group>"; };
 		EA02F49A1FE26CBA00DF34EF /* debugman_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_close@2x.png"; sourceTree = "<group>"; };
-		EA02F49B1FE26CBA00DF34EF /* debugman_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_edit@2x.png"; sourceTree = "<group>"; };
-		EA02F49C1FE26CBA00DF34EF /* debugman_refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_refresh.png; sourceTree = "<group>"; };
 		EA02F49D1FE26CBA00DF34EF /* debugman_bugs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debugman_bugs@2x.png"; sourceTree = "<group>"; };
 		EA02F49E1FE26CBA00DF34EF /* Network.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		EA02F49F1FE26CBA00DF34EF /* Manager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manager.storyboard; sourceTree = "<group>"; };
@@ -165,6 +162,7 @@
 		EA44B9461FE140D600DF7FF6 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		EA44B9471FE140D600DF7FF6 /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
 		EA9B47DC1FEA6084001DD838 /* debugman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_logo.png; sourceTree = "<group>"; };
+		EAEB4D2E1FFBD79000C06F6A /* debugman_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debugman_edit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,13 +210,12 @@
 		EA02F4941FE26CBA00DF34EF /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EAEB4D2E1FFBD79000C06F6A /* debugman_edit.png */,
 				EA9B47DC1FEA6084001DD838 /* debugman_logo.png */,
 				EA02F4961FE26CBA00DF34EF /* debugman_app@2x.png */,
 				EA02F4971FE26CBA00DF34EF /* debugman_logs@2x.png */,
 				EA02F4981FE26CBA00DF34EF /* debugman_network@2x.png */,
 				EA02F49A1FE26CBA00DF34EF /* debugman_close@2x.png */,
-				EA02F49B1FE26CBA00DF34EF /* debugman_edit@2x.png */,
-				EA02F49C1FE26CBA00DF34EF /* debugman_refresh.png */,
 				EA02F49D1FE26CBA00DF34EF /* debugman_bugs@2x.png */,
 			);
 			path = images;
@@ -423,10 +420,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEB4D2F1FFBD79000C06F6A /* debugman_edit.png in Resources */,
 				EA02F4AC1FE26CBA00DF34EF /* Network.storyboard in Resources */,
 				EA02F4A41FE26CBA00DF34EF /* debugman_app@2x.png in Resources */,
-				EA02F4AA1FE26CBA00DF34EF /* debugman_refresh.png in Resources */,
-				EA02F4A91FE26CBA00DF34EF /* debugman_edit@2x.png in Resources */,
 				EA02F4AD1FE26CBA00DF34EF /* Manager.storyboard in Resources */,
 				EA44B7911FE13ECD00DF7FF6 /* LaunchScreen.storyboard in Resources */,
 				EA02F4AB1FE26CBA00DF34EF /* debugman_bugs@2x.png in Resources */,
@@ -485,10 +481,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DebugMan/Pods-DebugMan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-4/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

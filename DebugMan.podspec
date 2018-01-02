@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DebugMan"
-  s.version      = "3.2.3"
+  s.version      = "3.2.4"
   s.summary      = "Debugging tool for iOS in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -135,6 +135,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.pod_target_xcconfig = {'SWIFT_VERSION' => '3.0'}
+  s.pod_target_xcconfig = {'SWIFT_VERSION' => '3.2'}
 
 end
