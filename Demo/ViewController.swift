@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     func mockHTTP() {
-        
+        /*
         //1.GET
         NetworkManager.sharedInstance().requestData(withURL: "https://httpbin.org/get", method: "GET", parameter: nil, header: nil, cookies: nil, timeoutInterval: 10, requestSerializer: RequestSerializer(rawValue: 0), responseSerializer: ResponseSerializer(rawValue: 0), result: { (responseObject) in
             
@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         }) { (error) in
             print(error?.localizedDescription)
         }
+        */
     }
 }
 

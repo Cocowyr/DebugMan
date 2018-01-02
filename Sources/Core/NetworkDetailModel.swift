@@ -23,7 +23,7 @@ struct NetworkDetailModel {
         self.image = image
         
         //超时时间
-        if title == "DURATION" {
+        if title == "LATENCY" {
             if let double_second_string = content?.replacingOccurrences(of: "s", with: "") {
                 if let double_second = Double(double_second_string) {
                     let int_second = Int(double_second)

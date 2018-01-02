@@ -6,8 +6,17 @@
 //  Copyright © 2017 Phicomm. All rights reserved.
 //
 
+typedef enum _RequestSerializer {
+    JSONRequestSerializer = 0,//JSON格式
+    HTTPRequestSerializer = 1,//Form格式
+} RequestSerializer;
+
+typedef enum _ResponseSerializer {
+    JSONResponseSerializer = 0,//JSON格式
+    HTTPResponseSerializer = 1,//Form格式
+} ResponseSerializer;
+
 #import <Foundation/Foundation.h>
-#import "NetworkManager.h"
 
 @interface JxbHttpModel : NSObject <NSCopying>
 

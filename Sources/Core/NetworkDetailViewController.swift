@@ -64,8 +64,8 @@ class NetworkDetailViewController: UITableViewController {
                 m3 = NetworkDetailModel.init(title: "RESPONSE", content: nil, UIImage.init(data: responseData))
             }
             //2.次要
-            let m5 = NetworkDetailModel.init(title: "DURATION", content: httpModel?.totalDuration)
-            let m6 = NetworkDetailModel.init(title: "MIMEType", content: httpModel?.mineType)
+            let m5 = NetworkDetailModel.init(title: "LATENCY", content: httpModel?.totalDuration)
+            let m6 = NetworkDetailModel.init(title: "MIME TYPE", content: httpModel?.mineType)
             var m7 = NetworkDetailModel.init(title: "HEADER", content: nil)
             if let headerFields = httpModel?.headerFields {
                 if !headerFields.isEmpty {
@@ -90,8 +90,8 @@ class NetworkDetailViewController: UITableViewController {
             let m3 = NetworkDetailModel.init(title: "RESPONSE", content: httpModel?.responseData.dataToPrettyPrintString())
             let m4 = NetworkDetailModel.init(title: "ERROR", content: httpModel?.localizedErrorMsg)
             //2.次要
-            let m5 = NetworkDetailModel.init(title: "DURATION", content: httpModel?.totalDuration)
-            let m6 = NetworkDetailModel.init(title: "MIMEType", content: httpModel?.mineType)
+            let m5 = NetworkDetailModel.init(title: "LATENCY", content: httpModel?.totalDuration)
+            let m6 = NetworkDetailModel.init(title: "MIME TYPE", content: httpModel?.mineType)
             var m7 = NetworkDetailModel.init(title: "HEADER", content: nil)
             if let headerFields = httpModel?.headerFields {
                 if !headerFields.isEmpty {
@@ -161,7 +161,7 @@ class NetworkDetailViewController: UITableViewController {
         //4.mock http请求:
         if let cString = self.httpModel?.url.absoluteString.cString(using: String.Encoding.utf8) {
             if let content_ = NSString(cString: cString, encoding: String.Encoding.utf8.rawValue) {
-                
+                /*
                 //核心代码
                 NetworkManager.sharedInstance().requestData(withURL: content_ as String!, method: self.httpModel?.method, parameter: requestDictionary, header: self.httpModel?.headerFields, cookies: nil, timeoutInterval: LogsSettings.shared.mockTimeoutInterval, requestSerializer: requestSerializer, responseSerializer: ResponseSerializer(rawValue: 1), result: { [weak self] (responseObject) in
                     //success
@@ -177,6 +177,7 @@ class NetworkDetailViewController: UITableViewController {
                             self?.navigationController?.popViewController(animated: true)
                         })
                 })
+                */
             }else{
                 alert.dismiss(animated: true, completion: nil)
             }

@@ -33,7 +33,6 @@ FOUNDATION_EXPORT const unsigned char DebugManVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DebugMan/PublicHeader.h>
 
-#import "NetworkManager.h"
 #import "JxbDebugTool.h"
 #import "JxbHttpDatasource.h"
 #import "NSString+Utils.h"
